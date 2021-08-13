@@ -9,6 +9,7 @@ $computers | ForEach-Object {
 
 
     Invoke-Command -ComputerName $computerName  -ArgumentList $User -ScriptBlock { 
+                param($user)
                 Add-LocalGroupMember -Group "Administrators" -Member $User 
         }
     }
