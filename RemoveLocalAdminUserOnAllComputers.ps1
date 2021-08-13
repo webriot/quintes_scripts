@@ -9,6 +9,7 @@ $computers | ForEach-Object {
 
 
     Invoke-Command -ComputerName $computerName  -ArgumentList $User -ScriptBlock { 
+        param($user)
         $users = Get-LocalGroupMember -Group "Administrators"
         $users | ForEach-Object {
             if($_.Name -eq $User) {
