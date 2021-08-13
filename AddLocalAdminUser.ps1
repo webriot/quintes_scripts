@@ -5,5 +5,5 @@ param(
         [string] $User
     )
 
-Invoke-Command -ComputerName $computerName  -ArgumentList $User -ScriptBlock { Add-LocalGroupMember -Group "Administrators" -Member $User }
+Invoke-Command -ComputerName $computerName  -ArgumentList $User -ScriptBlock { param($user) Add-LocalGroupMember -Group "Administrators" -Member $user }
 
