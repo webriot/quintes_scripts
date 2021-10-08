@@ -41,3 +41,6 @@ $install | ForEach-Object {
         Rmm-Alert -Category "Installation Failed" -Body "Installation of $_.Name failed."
     }   
 }
+
+# Configure LaserFiche
+& '\\q-server\installs\LaserFiche\Windows Client Settings\reg_ran.bat'
